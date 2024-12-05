@@ -1,0 +1,24 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+/* Custom scrollbar styling */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background-color: #4f46e5; /* indigo-600 */
+    border-radius: 4px;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background-color: #4338ca; /* a slightly darker indigo shade for hover effect */
+  }
+  
+  ::-webkit-scrollbar-track {
+    background-color: transparent;
+  }
+  
