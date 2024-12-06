@@ -1,7 +1,9 @@
-import React from 'react';
+
 import { NavLink, useNavigate } from 'react-router-dom'; // Import useNavigate
-import { LayoutDashboard, PiggyBank, Receipt, LogOut,Target } from 'lucide-react';
+import { LayoutDashboard, HandCoins, Receipt, LogOut,Target, BarChart } from 'lucide-react';
 import { supabase } from '../../lib/supabase';
+// import { BarChart } from "recharts";
+
 
 export default function Sidebar() {
   const navigate = useNavigate(); // Initialize useNavigate
@@ -18,8 +20,8 @@ export default function Sidebar() {
   return (
     <aside className="w-64 bg-white border-r border-gray-200 p-6">
       <div className="flex items-center gap-2 mb-8">
-        <PiggyBank className="w-8 h-8 text-indigo-600" />
-        <h1 className="text-xl font-bold">Budget Tracker</h1>
+      <HandCoins className="w-8 h-8 text-indigo-600" />
+        <h1 className="text-xl font-bold">Fiscora</h1>
       </div>
       
       <nav className="space-y-2">
@@ -57,6 +59,17 @@ export default function Sidebar() {
         >
           <Target className="w-5 h-5" />
           <span>Goals</span>
+        </NavLink>
+        <NavLink
+          to="/analytics"
+          className={({ isActive }) =>
+            `flex items-center gap-2 p-2 rounded-lg ${
+              isActive ? 'bg-indigo-50 text-indigo-600' : 'text-gray-600 hover:bg-gray-50'
+            }`
+          }
+        >
+          <BarChart className="w-5 h-5" />
+          <span>Analytics</span>
         </NavLink>
         
         <button

@@ -48,6 +48,7 @@ export default function Dashboard() {
         <div className="bg-white p-6 rounded-lg shadow-sm">
           <h2 className="text-lg font-semibold mb-2">
             <FontAwesomeIcon icon={faDollarSign} className="mr-2" />
+            
             Monthly Budget
           </h2>
           {budgetLoading ? (
