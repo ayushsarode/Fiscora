@@ -9,7 +9,7 @@ export default function Navbar() {
         <div className="flex items-center justify-between h-16">
           <Link to="/" className="flex items-center gap-2">
             <HandCoins className="w-8 h-8 text-indigo-600" />
-            <span className="text-xl font-bold">Budget Tracker</span>
+            <span className="text-xl font-bold">Fiscora</span>
           </Link>
           
           <div className="flex items-center gap-4">
