@@ -1,6 +1,6 @@
 
 import { NavLink, useNavigate } from 'react-router-dom'; // Import useNavigate
-import { LayoutDashboard, HandCoins, Receipt, LogOut,Target, BarChart } from 'lucide-react';
+import { LayoutDashboard, HandCoins, Receipt, LogOut,Target, BarChart, BookOpen } from 'lucide-react';
 import { supabase } from '../../lib/supabase';
 // import { BarChart } from "recharts";
 
@@ -70,6 +70,18 @@ export default function Sidebar() {
         >
           <BarChart className="w-5 h-5" />
           <span>Analytics</span>
+        </NavLink>
+
+        <NavLink
+          to="/tips"
+          className={({ isActive }) =>
+            `flex items-center gap-2 p-2 rounded-lg ${
+              isActive ? 'bg-indigo-50 text-indigo-600' : 'text-gray-600 hover:bg-gray-50'
+            }`
+          }
+        >
+          <BookOpen className="w-5 h-5" />
+          <span>Financial Tips</span>
         </NavLink>
         
         <button

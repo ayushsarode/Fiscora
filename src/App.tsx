@@ -9,6 +9,7 @@ import Home from './pages/Home';
 import Goals from './pages/Goals';
 import Confirmation from './pages/Confirmation';
 import Analytics from './pages/Analytics';
+import FinancialTips from './pages/FinancialTips';
 
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
           <Route path="/transactions" element={<Transactions />} />
           <Route path="/goals" element={<Goals />} />
           <Route path="/analytics" element={<Analytics />} />
+          <Route path="/tips" element={<FinancialTips />} />
         </Route>
       </Routes>
     </BrowserRouter>

@@ -13,7 +13,7 @@ export function useGoals(userId: string) {
   const fetchGoals = async () => {
     try {
       const { data, error } = await supabase
-        .from('financial_goals')
+        .from('goals')
         .select('*')
         .eq('user_id', userId)
         .order('created_at', { ascending: false });
@@ -30,7 +30,7 @@ export function useGoals(userId: string) {
   const addGoal = async (goal: Omit<Goal, 'id' | 'user_id' | 'created_at' | 'current_amount' | 'status'>) => {
     try {
       const { error } = await supabase
-        .from('financial_goals')
+        .from('goals')
         .insert([{ 
           ...goal, 
           user_id: userId,
@@ -48,7 +48,7 @@ export function useGoals(userId: string) {
   const updateGoalProgress = async (goalId: string, amount: number) => {
     try {
       const { error } = await supabase
-        .from('financial_goals')
+        .from('goals')
         .update({ current_amount: amount })
         .eq('id', goalId);
       if (error) throw error;
@@ -62,7 +62,7 @@ export function useGoals(userId: string) {
   const deleteGoal = async (goalId: string) => {
     try {
       const { error } = await supabase
-        .from('financial_goals')
+        .from('goals')
         .delete()
         .eq('id', goalId);
       if (error) throw error;
