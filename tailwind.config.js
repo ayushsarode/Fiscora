@@ -2,7 +2,12 @@
 export default {
   content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
   theme: {
-    extend: {},
+    extend: {
+      animation: {
+        fadeIn: 'fadeIn 1s ease-out forwards',
+        slideUp: 'slideUp 1s ease-out forwards',
+      },
+    },
   },
   plugins: [],
 };
